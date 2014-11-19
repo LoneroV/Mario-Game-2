@@ -18,8 +18,9 @@ game.resources = [
 	 * {name: "example01", type: "tmx", src: "data/map/example01.tmx"},
 	 * {name: "example01", type: "tmx", src: "data/map/example01.json"},
  	 */
-        {name: "VincentLevel1", type: "tmx", src: "data/map/VincentLevel1.tmx"}
-        
+        {name: "VincentLevel1", type: "tmx", src: "data/map/VincentLevel1.tmx"},
+        {name: "VincentLevel2", type: "tmx", src: "data/map/VincentLevel2.tmx"},
+        {name: "VincentLevel3", type: "tmx", src: "data/map/VincentLevel3.tmx"}
 
 	/* Background music. 
 	 * @example

@@ -28,7 +28,7 @@ game.playerEntity = me.Entity.extend({
         }else{
             this.body.vel.x = 0;
         }
-        
+                
         if(this.body.vel.x !== 0){
             if (!this.renderable.isCurrentAnimation("smallWalk")) {
                 this.renderable.setCurrentAnimation("smallWalk");
@@ -45,3 +45,15 @@ game.playerEntity = me.Entity.extend({
     }
         
 });
+
+game.LevelTrigger = me.Entity.extend({
+    init: function(x, y, settings){
+        this._super(me.Entity, 'init', [x, y, settings]);
+        this.body.onCollision = this.onCollision.bind(this);
+    },
+    
+    onCollision: function(){
+        
+    }
+    
+};
