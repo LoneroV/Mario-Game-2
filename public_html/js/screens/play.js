@@ -8,9 +8,8 @@ game.PlayScreen = me.ScreenObject.extend({
                 
                 me.levelDirector.loadLevel("VincentLevel1");
                 
-                var player = me.pool.pull("mario", 0, 420, {});
-                me.game.world.addChild(player, 3); 
-                
+                this.resetPlayer();
+                                                           
                 me.input.bindKey(me.input.KEY.RIGHT, "right");
                                 
 		// add our HUD to the game world
@@ -27,6 +26,7 @@ game.PlayScreen = me.ScreenObject.extend({
 		me.game.world.removeChild(this.HUD);
 	},
         resetPlayer: function() {
-            
+             var player = me.pool.pull("mario", 0, 420, {});
+                me.game.world.addChild(player, 3); 
         }
 });
