@@ -23,21 +23,21 @@ game.playerEntity = me.Entity.extend({
     },
     
     update: function(delta) {
- 
+           //checks if right button has been pressed
         if (me.input.isKeyPressed("left")) {
-            // flip the sprite on horizontal axis
+           // flips the sprite on horizontal axis
             this.flipX(true);
-            // update the entity velocity
+            // updates the entity velocity
             this.body.vel.x -= this.body.accel.x * me.timer.tick;
-            // change to the walking animation
+            // changes to the walking animation
             if (!this.renderable.isCurrentAnimation("smallWalk")) {
                 this.renderable.setCurrentAnimation("smallWalk");
             }
             
         } else if (me.input.isKeyPressed("right")) {
-            // unflip the sprite
+            // unflips the sprite
             this.flipX(false);
-            // update the entity velocity
+            // updates the entity velocity
             this.body.vel.x += this.body.accel.x * me.timer.tick;
             // change to the walking animation
             if (!this.renderable.isCurrentAnimation("smallWalk")) {
@@ -45,7 +45,7 @@ game.playerEntity = me.Entity.extend({
             }
         } else {
             this.body.vel.x = 0;
-            // change to the standing animation
+            // changes to the standing animation
            }
      
         if (me.input.isKeyPressed("jump")) {
