@@ -113,5 +113,5 @@ game.BadGuy = me.Entity.extend({
                         
             }
         }]);
-    },
-   
+    }
+    });   
