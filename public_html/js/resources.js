@@ -8,7 +8,8 @@ game.resources = [
         {name: "meta-tiles", type:"image", src: "data/img/meta-tiles.png"},
         {name: "mario", type:"image", src: "data/img/player1.png"},
         {name: "title-screen", type:"image", src: "data/img/new-title-screen.png"},
-
+        {name: "slime", type:"image", src: "data/img/slime-spritesheet.png"},
+        
 	/* Atlases 
 	 * @example
 	 * {name: "example_tps", type: "tps", src: "data/img/example_tps.json"},
@@ -21,7 +22,8 @@ game.resources = [
  	 */
         {name: "VincentLevel1", type: "tmx", src: "data/map/VincentLevel1.tmx"},
         {name: "VincentLevel2", type: "tmx", src: "data/map/VincentLevel2.tmx"},
-        {name: "VincentLevel3", type: "tmx", src: "data/map/VincentLevel3.tmx"}
+        {name: "VincentLevel3", type: "tmx", src: "data/map/VincentLevel3.tmx"},
+        {name: "VincentLevel4", type: "tmx", src: "data/map/VincentLevel4.tmx"}
 
 	/* Background music. 
 	 * @example
