@@ -14,7 +14,7 @@ game.playerEntity = me.Entity.extend({
         }]);
     
         this.renderable.addAnimation("idle", [3]);
-        this.renderable.addanimation("bigIdle", [19]);
+        this.renderable.addAnimation("bigIdle", [19]);
         this.renderable.addAnimation("smallWalk", [9, 10, 11, 12, 13], 80);
         this.renderable.addAnimation("bigWalk", [14, 15, 16, 17, 18, 19], 80);
         this.renderable.addAnimation("shrink", [0, 1, 2, 3], 25);
@@ -67,8 +67,8 @@ game.playerEntity = me.Entity.extend({
        
         
         this.body.update(delta);
-        me.collision.check(this, true, this.collideHandler.bind(this, true));
-        
+        me.collision.check(this, true, this.collideHandler.bind(this), true);
+        //checks the current animation for big and small mario
         if(!this.big){
             if(this.body.vel.x !== 0){
                 if (!this.renderable.isCurrentAnimation("smallWalk") && !this.renderable.isCurrentAnimation("grow") && !this.renderable.isCurrentAnimation("shrink")) {
@@ -92,9 +92,11 @@ game.playerEntity = me.Entity.extend({
         this._super(me.Entity, "update", [delta]);
         return true;
     },
+        //checks the collision with badguy and mushroom
         collideHandler: function(response){
+            //console.log(this.pos.y + " " + response.b.pos.y);
+            //var ydif = this.pos.y;
             var ydif = this.pos.y - response.b.pos.y;
-            console.log(ydif);
             
             if(response.b.type === 'badguy'){
                 if(ydif <= -115){
@@ -110,7 +112,7 @@ game.playerEntity = me.Entity.extend({
                     me.state.change(me.state.MENU);
                 }
                 }
-            }else if(respone.b.type === "mushroom"){
+            }else if(response.b.type === "mushroom"){
                 this.big = true;
                 this.renderable.setCurrentAnimation("grow", "bigIdle");
                 this.renderable.setAnimationFrame();
@@ -185,7 +187,7 @@ game.BadGuy = me.Entity.extend({
                 this.walkLeft = true;
             }
             this.flipX(!this.walkLeft);
-            this.body.vel.x += (this.walkLeft) ? -this.body.accel.x * me.timer.tick : me.body.accel.x * me.timer.tick;
+            this.body.vel.x += (this.walkLeft) ? -this.body.accel.x * me.timer.tick : this.body.accel.x * me.timer.tick;
             
         }else {
             me.game.world.removeChild(this);
