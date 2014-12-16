@@ -15,8 +15,8 @@ game.playerEntity = me.Entity.extend({
     
         this.renderable.addAnimation("idle", [3]);
         this.renderable.addAnimation("bigIdle", [19]);
-        this.renderable.addAnimation("smallWalk", [9, 10, 11, 12, 13], 80);
-        this.renderable.addAnimation("bigWalk", [14, 15, 16, 17, 18, 19], 80);
+        this.renderable.addAnimation("smallWalk", [9, 10, 11, 12, 13], 60);
+        this.renderable.addAnimation("bigWalk", [14, 15, 16, 17, 18, 19], 60);
         this.renderable.addAnimation("shrink", [0, 1, 2, 3], 25);
         this.renderable.addAnimation("grow", [4, 5, 6, 7], 25);
         
